@@ -1,0 +1,115 @@
+ [
+    {
+      "_id": "642c155b2c4774f05c36eeaa",
+      "picture": "https://i.ibb.co/pnDnyzZ/5.jpg",
+      "instructorName": "John Smith",
+      "classType": "Football",
+     " numberOfStudents":20,
+      "availableSeats": 5,
+      "price": 1000
+    },
+    {
+      "_id": "642c155b2c4774f05c36eeb9",
+      "picture": "https://i.ibb.co/Q8M55DH/basketball.jpg",
+      "instructorName": "Sarah Johnson",
+      "classType": "Basketball",
+      "numberOfStudents": 15,
+      "availableSeats": 10,
+      "price": 800
+    },
+    {
+      "_id": "642c155b2c4774f05c36ee7c",
+      "picture": "https://i.ibb.co/BznGQ9y/cricket.jpg",
+      "instructorName": "David Wilson",
+      "classType": "Cricket",
+      "numberOfStudents": 25,
+      "availableSeats": 3,
+      "price": 1200
+    },
+    {
+      "_id": "642c155b2c4774f05c36ee88",
+      "picture": "https://i.ibb.co/w6ySQHp/2.jpg",
+      "instructorName": "Emily Davis",
+      "classType": "Badminton",
+      "numberOfStudents": 12,
+      "availableSeats": 8,
+      "price": 600
+    },
+    {
+      "_id": "642c155b2c4774f05c36ee7a",
+      "picture": "https://i.ibb.co/1n3QfHZ/hockey.jpg",
+      "instructorName": "Michael Thompson",
+      "classType": "Hockey",
+      "numberOfStudents": 18,
+      "availableSeats": 2,
+      "price": 900
+    },
+    {
+      "_id": "642c155b2c4774f05c36ee8c",
+      "picture": "https://i.ibb.co/wgxRW7s/1.jpg",
+      "instructorName": "Jessica Martinez",
+      "classType": "athletics",
+      "numberOfStudents": 14,
+      "availableSeats": 5,
+      "price": 1500
+    },
+    {
+      "_id": "642c155b2c4774f05c36ee94",
+      "picture": "https://i.ibb.co/qYXy7CJ/7.jpg",
+      "instructorName": "John Smith",
+      "classType": "athletics",
+     " numberOfStudents":29,
+      "availableSeats": 5,
+      "price": 1000
+    },
+    {
+      "_id": "642c155b2c4774f05c36ee9e",
+      "picture": "https://i.ibb.co/V2R37c1/golf.jpg",
+      "instructorName": "Sarah Johnson",
+      "classType": "Hockey",
+      "numberOfStudents": 16,
+      "availableSeats": 10,
+      "price": 800
+    },
+    {
+      "_id": "642c155b2c4774f05c36eea6",
+      "picture": "https://i.ibb.co/1ZhCG7p/3.jpg",
+      "instructorName": "David Wilson",
+      "classType": "Badminton",
+      "numberOfStudents": 27,
+      "availableSeats": 3,
+      "price": 1200
+    },
+    {
+      "_id": "642c155b2c4774f05c36eeaf",
+      "picture": "https://i.ibb.co/s38MDHc/12.jpg",
+      "instructorName": "Emily Davis",
+      "classType": "Cricket",
+      "numberOfStudents": 19,
+      "availableSeats": 8,
+      "price": 600
+    },
+    {
+      "_id": "642c155b2c4774f05c36ee89",
+      "picture": "hockey_picture.jpg",
+      "instructorName": "Michael Thompson",
+      "classType": "Basketball",
+      "numberOfStudents": 17,
+      "availableSeats": 2,
+      "price": 900
+    },
+    {
+      "_id": "642c155b2c4774f05c36ee8a",
+      "picture": "boxing_picture.jpg",
+      "instructorName": "Jessica Martinez",
+      "classType": "Football",
+      "numberOfStudents": 13,
+      "availableSeats": 5,
+      "price": 1500
+    }
+    
+  
+  ]
+  
+
+  
