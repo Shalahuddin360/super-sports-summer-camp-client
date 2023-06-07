@@ -9,8 +9,8 @@ const Class = () => {
                 <title> Sport || Classes</title>
                 
             </Helmet>
-            <ClassCover img={classImg} title={"Our Class"} ></ClassCover>
-        </div>
+            <ClassCover  img={classImg} title={"Our Class"} ></ClassCover>
+        </div>  
     );
 };
 
