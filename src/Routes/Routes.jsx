@@ -6,6 +6,8 @@ import Main from "../Layout/Main";
 import Home from "../pages/Home/Home/Home";
 import Class from "../pages/Class/Class";
 import EnrollClass from "../pages/EnrollCourse/EnrollClass/EnrollClass";
+import Login from "../pages/Login/Login";
+import Register from "../pages/Register/Register";
 
  export const router = createBrowserRouter([
     {
@@ -23,6 +25,15 @@ import EnrollClass from "../pages/EnrollCourse/EnrollClass/EnrollClass";
         {
           path:'enroll/:classType',
           element:<EnrollClass></EnrollClass>
+        },
+        {
+         path:'login',
+         element:<Login></Login>
+        }
+        ,
+        {
+        path:'register',
+        element:<Register></Register>
         }
       ]
     },
