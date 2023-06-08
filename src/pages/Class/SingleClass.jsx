@@ -1,8 +1,9 @@
 
 
+
 const SingleClass = ({ course }) => {
-    console.log(course);
-    const {_id,picture,instructorName,classType,availableSeats,price,numberOfStudents} = course
+    // console.log(course);
+    const {picture,instructorName,classType,availableSeats,price} = course
     return (
         <div>
             <div className="card w-96 bg-base-100 shadow-xl mx-auto">
@@ -14,9 +15,7 @@ const SingleClass = ({ course }) => {
                     <p>Instructor Name: {instructorName}</p>
                     <p>AvailableSeats: {availableSeats}</p>
                     <p>Course Price: {price}</p>
-                    <div className="card-actions">
-                        <button className="btn btn-primary">Buy Now</button>
-                    </div>
+             
                 </div>
             </div>
         </div>

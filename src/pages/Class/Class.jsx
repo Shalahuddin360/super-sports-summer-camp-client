@@ -23,22 +23,22 @@ const Class = () => {
             <ClassCover  img={classImg} title={"Our Class"} ></ClassCover>
             {/* football class type */}
             <SectionTitle subHeading={"Do not miss"} heading={" Football Course Offer"}></SectionTitle>
-            <ClassCategory courses={football}></ClassCategory>
+            <ClassCategory courses={football} classType={"football"}></ClassCategory>
             {/* basketball class type */}
             <SectionTitle subHeading={"Do not miss"} heading={" Basketball Course Offer"}></SectionTitle>
-            <ClassCategory courses={basketball}></ClassCategory>
+            <ClassCategory courses={basketball} classType={"basketball"} ></ClassCategory>
             {/* football class type */}
             <SectionTitle subHeading={"Do not miss"} heading={" Cricket Course Offer"}></SectionTitle>
-            <ClassCategory courses={cricket}></ClassCategory>
+            <ClassCategory courses={cricket} classType={"cricket"}></ClassCategory>
             {/* football class type */}
             <SectionTitle subHeading={"Do not miss"} heading={"Badminton Course Offer"}></SectionTitle>
-            <ClassCategory courses={ badminton}></ClassCategory>
+            <ClassCategory courses={badminton} classType={"badminton"}></ClassCategory>
             {/* football class type */}
             <SectionTitle subHeading={"Do not miss"} heading={" hockey Course Offer"}></SectionTitle>
-            <ClassCategory courses={hockey}></ClassCategory>
+            <ClassCategory courses={hockey} classType={"hockey"}></ClassCategory>
             {/* football class type */}
             <SectionTitle subHeading={"Do not miss"} heading={" athletics Course Offer"}></SectionTitle>
-            <ClassCategory courses={athletics}></ClassCategory>
+            <ClassCategory courses={athletics} classType={"athletics"}></ClassCategory>
             {/* football class type */}
           
         </div>  
