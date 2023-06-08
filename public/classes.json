@@ -4,7 +4,7 @@
       "picture": "https://i.ibb.co/pnDnyzZ/5.jpg",
       "instructorName": "John Smith",
       "classType": "Football",
-     " numberOfStudents":20,
+     "numberOfStudents":20,
       "availableSeats": 5,
       "price": 1000
     },
@@ -58,7 +58,7 @@
       "picture": "https://i.ibb.co/qYXy7CJ/7.jpg",
       "instructorName": "John Smith",
       "classType": "athletics",
-     " numberOfStudents":29,
+      "numberOfStudents":29,
       "availableSeats": 5,
       "price": 1000
     },
@@ -91,7 +91,7 @@
     },
     {
       "_id": "642c155b2c4774f05c36ee89",
-      "picture": "hockey_picture.jpg",
+      "picture": "https://i.ibb.co/F7c7K6z/amen-thompson-points-iso-combine.jpg",
       "instructorName": "Michael Thompson",
       "classType": "Basketball",
       "numberOfStudents": 17,
@@ -100,7 +100,7 @@
     },
     {
       "_id": "642c155b2c4774f05c36ee8a",
-      "picture": "boxing_picture.jpg",
+      "picture": "https://i.ibb.co/mFzf1Pj/p-soccer.jpg",
       "instructorName": "Jessica Martinez",
       "classType": "Football",
       "numberOfStudents": 13,

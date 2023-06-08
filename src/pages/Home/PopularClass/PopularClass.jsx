@@ -22,7 +22,7 @@ const PopularClass = () => {
         </SectionTitle>
           <div>
             {
-                
+                console.log(classes)
             }
           </div>
        </section>
