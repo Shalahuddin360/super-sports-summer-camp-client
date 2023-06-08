@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 import logo from "../../../assets/logo.png"
-
+//navbar
 const Navbar = () => {
     const navOptions = <>
         <li><Link to="/">Home</Link> </li>
         <li> <Link to="/class">Classes</Link></li>
         <li> <Link to="/enroll/football">Enroll Class</Link></li>
-        <li> <Link to="/enroll/football">Instructor Page</Link></li>
+    
     </>
     return (
         <div className="fixed z-10 bg-black bg-opacity-40 max-w-screen-xl text-white navbar bg-base-100">
