@@ -1,12 +1,13 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
+import { Helmet } from "react-helmet-async";
 
 
 const Login = () => {
     const [show, setShow] = useState(false);
-    const {signIn} = useContext(AuthContext);
-    
+    const { signIn } = useContext(AuthContext);
+
 
     const handleLogIn = (event) => {
         event.preventDefault();
@@ -14,18 +15,22 @@ const Login = () => {
         const email = form.email.value;
         const password = form.password.value;
         console.log(email, password);
-        signIn(email,password)
-        .then(result=>{
-            const user = result.user;
-            console.log(user);
-        })
-        .catch(error=>{
-            console.log(error);
-        })
+        signIn(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+            })
+            .catch(error => {
+                console.log(error);
+            })
 
     }
     return (
-        <div>
+        <>
+            <Helmet>
+                <title> Sport || Login</title>
+
+            </Helmet>
             <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content flex-col lg:flex-row">
                     <div className="text-center md:w-1/2 lg:text-left">
@@ -60,7 +65,7 @@ const Login = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </>
     );
 };
 
