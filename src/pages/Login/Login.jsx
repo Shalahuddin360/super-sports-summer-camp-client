@@ -1,15 +1,28 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../providers/AuthProvider";
 
 
 const Login = () => {
-    const [show, setShow] = useState(false)
+    const [show, setShow] = useState(false);
+    const {signIn} = useContext(AuthContext);
+    
+
     const handleLogIn = (event) => {
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password)
+        console.log(email, password);
+        signIn(email,password)
+        .then(result=>{
+            const user = result.user;
+            console.log(user);
+        })
+        .catch(error=>{
+            console.log(error);
+        })
+
     }
     return (
         <div>
@@ -25,7 +38,7 @@ const Login = () => {
                                 <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>
-                                <input type="text" placeholder="Enter Your Email:" className="input input-bordered" name="email" required />
+                                <input type="email" placeholder="Enter Your Email:" className="input input-bordered" name="email" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">

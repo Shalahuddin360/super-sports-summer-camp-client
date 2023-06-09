@@ -15,7 +15,7 @@ const PopularClass = () => {
 //     })
 //  },[])
 const [classes] = useClass();
- console.log(classes)
+//  console.log(classes);
     return (
        <section>
         <SectionTitle
