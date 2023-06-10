@@ -1,14 +1,37 @@
 import { Link } from "react-router-dom";
 import logo from "../../../assets/logo.png"
+import { useContext } from "react";
+import { AuthContext } from "../../../providers/AuthProvider";
+import {FaBook } from "react-icons/fa";
+import useSelect from "../../../hooks/useSelect";
 //navbar
 const Navbar = () => {
+    const { user, logOut } = useContext(AuthContext);
+    const [selectClass] = useSelect();
+    const handleLogOut = () => {
+        logOut()
+    }
     const navOptions = <>
         <li><Link to="/">Home</Link> </li>
         <li> <Link to="/class">Classes</Link></li>
         <li> <Link to="/enroll/football">Enroll Class</Link></li>
-        <li> <Link to="/login">Login</Link></li>
+        <li> <Link to="/private">Private</Link></li>
+        <li> <Link to="/"><button className="btn"> <FaBook></FaBook> <div className="badge badge-secondary">+{selectClass?.length||0}</div>
+        </button></Link></li>
+
+        {
+            user ? <>
+
+                <span>{user?.displayName}</span>
+                <button onClick={handleLogOut} className="btn btn-ghost">Logout</button>
+            </> : <>
+                <li> <Link to="/login">Login</Link></li>
+
+            </>
+        }
+
         <li> <Link to="/register">Register</Link></li>
-    
+
     </>
     return (
         <div className="fixed z-10 bg-black bg-opacity-40 max-w-screen-xl text-white navbar">
@@ -29,7 +52,11 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">Button</a>
+                {user ? <><div className="avatar">
+                    <div className="rounded w-12 h-12">
+                        <img src={user.photoURL} alt="Avatar Tailwind CSS Component" />
+                    </div>
+                </div></> : <></>}
             </div>
         </div>
     );

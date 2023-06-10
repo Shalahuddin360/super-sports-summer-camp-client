@@ -2,24 +2,43 @@
 import { useContext } from "react";
 import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
+import Swal from "sweetalert2";
 
 
 const Register = () => {
-    const { register, handleSubmit, formState: { errors },watch} = useForm();
-    const {createUser} = useContext(AuthContext)
+    const { register, handleSubmit, formState: { errors },watch,reset} = useForm();
+    const {createUser,updateStudentProfile} = useContext(AuthContext);
+    const navigate = useNavigate();
 
     const onSubmit = data => {
         console.log(data);
         createUser(data.email,data.password)
         .then(result=>{
             const loggedUser = result.user;
-            console.log(loggedUser)
+            console.log(loggedUser);
+            updateStudentProfile(data.name,data.picture)
+            .then(()=>{
+                console.log('student profile updated');
+                reset();
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Student Registration Successfully',
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
+                  navigate('/login')
+            })
+            .catch(error=>{
+                console.log(error)
+            })
         })
         .catch(error=>{
             console.log(error);
         })
+
     }
     // console.log(watch("example"));
     return (
@@ -40,7 +59,7 @@ const Register = () => {
                                 <label className="label">
                                     <span className="label-text">Name</span>
                                 </label>
-                                <input type="text" defaultValue="test" {...register("name", { required: true })} placeholder="Enter Your Name:" className="input input-bordered" name="name" />
+                                <input type="text"  {...register("name", { required: true })} placeholder="Enter Your Name:" className="input input-bordered" name="name" />
                                 {errors.name && <span className="text-red-600">Name is required</span>}
                             </div>
 
