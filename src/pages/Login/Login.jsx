@@ -4,6 +4,8 @@ import { AuthContext } from "../../providers/AuthProvider";
 import { Helmet } from "react-helmet-async";
 import Swal from "sweetalert2";
 import { useForm } from "react-hook-form";
+import SocialLogin from "../Shared/SocialLogin/SocialLogin";
+
 
 
 const Login = () => {
@@ -21,7 +23,7 @@ const Login = () => {
                 const user = result.user;
                 console.log(user);
                 Swal.fire({
-                    title: 'Student Login Successfully',
+                    title: 'user Login Successfully',
                     showClass: {
                       popup: 'animate__animated animate__fadeInDown'
                     },
@@ -73,6 +75,7 @@ const Login = () => {
                             </div>
                         </form>
                         <p className='my-4 text-center'>New To Visit Super Sport ? Please <Link className='text-orange-600 font-bold' to="/register">Register</Link></p>
+                      <SocialLogin></SocialLogin>
                     </div>
                 </div>
             </div>
