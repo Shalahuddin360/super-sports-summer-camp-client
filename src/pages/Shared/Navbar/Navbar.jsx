@@ -16,7 +16,7 @@ const Navbar = () => {
         <li> <Link to="/class">Classes</Link></li>
         <li> <Link to="/enroll/football">Enroll Class</Link></li>
         <li> <Link to="/private">Private</Link></li>
-        <li> <Link to="/dashboard/mySelectedClass"><button className="btn"> <FaBook></FaBook> <div className="badge badge-secondary">+{selectClass?.length||0}</div>
+        <li> <Link to="/dashboard/"><button className="btn"> <FaBook></FaBook> <div className="badge badge-secondary">+{selectClass?.length||0}</div>
         </button></Link></li>
 
         {

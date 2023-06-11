@@ -6,6 +6,7 @@ import Swal from "sweetalert2";
 
 const MySelectedClass = () => {
     const [selectClass,refetch] = useSelect();
+    console.log('set',selectClass)
     const total = selectClass.reduce((sum, course) => course.price + sum, 0)
     const handleDelete = (course) => {
         Swal.fire({

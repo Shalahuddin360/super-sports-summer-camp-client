@@ -1,16 +1,18 @@
 import { NavLink, Outlet } from "react-router-dom";
 import { FaBookReader, FaHome,  FaUsers, FaWallet } from 'react-icons/fa';
 import useSelect from "../hooks/useSelect";
+import useAdmin from "../hooks/useAdmin";
+import useInstructor from "../hooks/useInstructor";
 
 
 
 const Dashboard = () => {
     const [selectClass] = useSelect();
     //TODO : load data from the server to have dynamic isAdmin based on data
-  
-
-    const isAdmin = true;
-    const isInstructor = false;
+    // const isAdmin = true;
+    const [isAdmin] = useAdmin();
+    // const isInstructor = false;
+    const [isInstructor] = useInstructor();
     return (
         <div className="drawer lg:drawer-open">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
@@ -46,7 +48,7 @@ const Dashboard = () => {
                                 <>
                                     <li>Instructor dashboard</li>
                                     <li><NavLink to="/dashboard/home" > <FaHome></FaHome>  Instructor Home</NavLink></li>
-                                    <li><NavLink to="/dashboard/mySelectedClass"> <FaBookReader></FaBookReader> Add A Class
+                                    <li><NavLink to="/dashboard/addClass"> <FaBookReader></FaBookReader> Add A Class
                                      
                                      </NavLink>
                                     </li>
