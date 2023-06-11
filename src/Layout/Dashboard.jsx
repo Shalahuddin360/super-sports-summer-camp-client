@@ -2,9 +2,13 @@ import { NavLink, Outlet } from "react-router-dom";
 import { FaBookReader, FaHome,  FaUsers, FaWallet } from 'react-icons/fa';
 import useSelect from "../hooks/useSelect";
 
+
+
 const Dashboard = () => {
     const [selectClass] = useSelect();
     //TODO : load data from the server to have dynamic isAdmin based on data
+  
+
     const isAdmin = true;
     const isInstructor = false;
     return (
