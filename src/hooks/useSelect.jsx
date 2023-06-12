@@ -4,12 +4,12 @@ import { AuthContext } from '../providers/AuthProvider'
 
 const useSelect = ()=>{
 
-    const {user} = useContext(AuthContext);
+    const {user,loading} = useContext(AuthContext);
     const token = localStorage.getItem('access-token')
    
     const { refetch , data : selectClass =[]} = useQuery({
         queryKey: ['select',user?.email],
-        
+        enabled: !loading,
         queryFn:async ()=>{
             const res = await fetch(`http://localhost:5000/select?email=${user?.email}`,{
                 headers :{
