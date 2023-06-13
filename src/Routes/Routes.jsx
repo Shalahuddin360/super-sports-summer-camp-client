@@ -15,6 +15,10 @@ import MySelectedClass from "../pages/Dashboard/MySelectedClass/MySelectedClass"
 import AllUsers from "../pages/Dashboard/AllUsers/AllUsers";
 import AddClass from "../pages/Dashboard/AddClass/AddClass";
 import InstructorRoute from "./InstructorRoute";
+import ErrorPage from "../pages/Home/ErrorPage/ErrorPage";
+import Payment from "../pages/Dashboard/Payment/Payment";
+import AdminRoute from "./AdminRoute";
+
 
  export const router = createBrowserRouter([
     {
@@ -60,13 +64,22 @@ import InstructorRoute from "./InstructorRoute";
         
           {
             path:'allUsers',
-            element:<AllUsers></AllUsers>
+            element: <AdminRoute><AllUsers></AllUsers></AdminRoute>
           },
           {
             path:'addClass',
             element: <InstructorRoute><AddClass></AddClass></InstructorRoute>
           }
+          ,
+          {
+            path:'/dashboard/payment/:price',
+            element:<Payment></Payment>
+          }
         
       ]
+    },
+    {
+      path:'*',
+      element:<ErrorPage></ErrorPage>
     }
   ]);

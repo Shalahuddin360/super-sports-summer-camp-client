@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet-async";
 import useSelect from "../../../hooks/useSelect";
 import { FaTrashAlt } from "react-icons/fa";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 
 const MySelectedClass = () => {
@@ -60,6 +61,7 @@ const MySelectedClass = () => {
                             <th>Class Name</th>
                             <th>Price</th>
                             <th>Action</th>
+                            <th>Pay</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -85,6 +87,7 @@ const MySelectedClass = () => {
                                 <td>
                                     <button onClick={() => handleDelete(course)} className="btn btn-ghost btn-md bg-red-800 text-white"><FaTrashAlt></FaTrashAlt></button>
                                 </td>
+                                <td><Link to={`/dashboard/payment/${course.price}`}> <button className="btn btn-primary">PAY</button> </Link> </td>
                             </tr>)
 
                         }

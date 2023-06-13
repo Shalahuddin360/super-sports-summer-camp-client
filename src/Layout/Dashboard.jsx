@@ -65,6 +65,8 @@ const Dashboard = () => {
                                         <span className="badge badge-secondary inline">+{selectClass?.length || 0}</span> </NavLink>
                                     </li>
                                     <li><NavLink to="/dashboard/history"> <FaWallet></FaWallet> Payment History</NavLink> </li>
+                                    
+                                    {/* <li><NavLink to="/dashboard/myEnrollClass"> <FaWallet></FaWallet> My Enroll Classes</NavLink> </li> */}
 
                                 </>)
 
