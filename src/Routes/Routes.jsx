@@ -81,7 +81,7 @@ import AllManageClasses from "../pages/Dashboard/ManageClasses/AllManageClasses"
           },
           {
            path:'allClasses',
-           element:<AllManageClasses></AllManageClasses>
+           element:<AdminRoute><AllManageClasses></AllManageClasses></AdminRoute>
           },
           {
             path:'/dashboard/payment/:price',
