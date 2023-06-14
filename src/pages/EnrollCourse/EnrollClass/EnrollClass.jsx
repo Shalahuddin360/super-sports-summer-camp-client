@@ -7,14 +7,13 @@ import useClass from '../../../hooks/useClass';
 import EnrollTab from '../EnrollTab/EnrollTab';
 import { useParams } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-// import CourseCard from '../../../components/CourseCard/CourseCard';
 
 
 
 const EnrollClass = () => {
     const classTypes = ['football', 'basketball', 'cricket', 'badminton', 'hockey', 'athletics'];
     const { classType } = useParams();
-    // console.log(classType)
+  
     const initialIndex = classTypes.indexOf(classType)
     const [tabIndex, setTabIndex] = useState(initialIndex);
     const [classes] = useClass();
@@ -27,12 +26,12 @@ const EnrollClass = () => {
     const hockey = classes.filter(course => course.classType === "Hockey");
     const athletics = classes.filter(course => course.classType === "athletics");
     return (
-        <div>
+        <div className=''>
             <Helmet>
-                <title> Sport || Enroll</title>
+                <title> Sport || Classes</title>
 
             </Helmet>
-            <ClassCover img={enrollCover} title={"enroll course"}></ClassCover>
+            <ClassCover img={enrollCover} title={"Our Classes"}></ClassCover>
 
             <Tabs defaultIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
                 <TabList>

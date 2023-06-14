@@ -2,24 +2,17 @@
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 import PopularClassCard from "../PopularClassCard/PopularClassCard";
 import useClass from "../../../hooks/useClass";
+// import { useEffect, useState } from "react";
 
 
 const PopularClass = () => {
-//     const [classes,setClasses] =useState([])
-//  useEffect(()=>{
- 
-//     fetch('http://localhost:5173/classes')
-//     .then(res=>res.json())
-//     .then(data=>{
-//         setClasses(data)
-//     })
-//  },[])
+
 const [classes] = useClass();
-//  console.log(classes);
+ console.log(classes);
     return (
        <section>
         <SectionTitle
-        subHeading={"Popular  Courses"}
+        subHeading={"Popular  Class"}
         heading={"From  Our Classes"}
         >
         </SectionTitle>

@@ -10,7 +10,7 @@ const ClassCategory = ({ courses, classType }) => {
     return (
         <div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 justify-center items-center gap-4 my-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center items-center gap-4 my-16">
                 {
                     courses.map(course => <SingleClass
                         key={course._id}
@@ -20,8 +20,8 @@ const ClassCategory = ({ courses, classType }) => {
                 }
 
             </div>
-            <div className="card-actions">
-                <Link to={`/enroll/${classType}`}>  <button className="btn btn-primary border-0 border-b-4">Enroll Now</button></Link>
+            <div className="card-actions w-full mx-auto">
+                <Link to={`/enroll/${classType}`}>  <button className="btn btn-primary  border-0 border-b-4">Enroll Now</button></Link>
             </div>
 
         </div>

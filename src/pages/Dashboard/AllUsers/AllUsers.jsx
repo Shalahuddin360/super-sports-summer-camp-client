@@ -89,8 +89,8 @@ const AllUsers = () => {
                                 </td>
                                 <td>
 
-                                    <button onClick={() => handleMakeAdmin(user)} className="btn btn-ghost btn-md bg-red-800 text-white">Make Admin</button></td>
-                                <td>  <button onClick={() => handleMakeInstructor(user)} className="btn btn-ghost btn-md bg-red-800 text-white">Make Instructor</button></td>
+                                    <button onClick={() => handleMakeAdmin(user)} disabled ={user.role === 'admin'} className="btn btn-ghost btn-md bg-green-500 text-white">Make Admin</button></td>
+                                <td>  <button onClick={() => handleMakeInstructor(user)} disabled ={user.role === 'instructor'} className="btn btn-ghost btn-md bg-green-500 text-white">Make Instructor</button></td>
                             </tr>)
                         }
 

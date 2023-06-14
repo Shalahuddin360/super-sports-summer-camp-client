@@ -2,27 +2,22 @@ import { Link } from "react-router-dom";
 import logo from "../../../assets/logo.png"
 import { useContext } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
-import {FaBook } from "react-icons/fa";
-import useSelect from "../../../hooks/useSelect";
-//navbar
+import { FaUserCircle} from "react-icons/fa";
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
-    const [selectClass] = useSelect();
     const handleLogOut = () => {
         logOut()
     }
     const navOptions = <>
         <li><Link to="/">Home</Link> </li>
-        <li> <Link to="/class">Classes</Link></li>
-        <li> <Link to="/enroll/football">Enroll Class</Link></li>
-        <li> <Link to="/private">Private</Link></li>
-        <li> <Link to="/dashboard/"><button className="btn"> <FaBook></FaBook> <div className="badge badge-secondary">+{selectClass?.length||0}</div>
-        </button></Link></li>
+        <li> <Link to="/class">Enroll Class</Link></li>
+        <li> <Link to="/enroll/football">Classes</Link></li>
+        <li> <Link to="/dashboard/">Dashboard</Link></li>
 
         {
             user ? <>
 
-                <span>{user?.displayName}</span>
+             
                 <button onClick={handleLogOut} className="btn btn-ghost">Logout</button>
             </> : <>
                 <li> <Link to="/login">Login</Link></li>
@@ -34,7 +29,7 @@ const Navbar = () => {
 
     </>
     return (
-        <div className="fixed z-10 bg-black bg-opacity-40 max-w-screen-xl text-white navbar">
+        <div className="fixed mt-0 z-10 bg-black bg-opacity-40 max-w-screen-xl text-white navbar mb-8">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -54,9 +49,9 @@ const Navbar = () => {
             <div className="navbar-end">
                 {user ? <><div className="avatar">
                     <div className="rounded w-12 h-12">
-                        <img src={user.photoURL} alt="Avatar Tailwind CSS Component" />
+                        <img src={user.photoURL} title={user?.displayName} alt="Avatar Tailwind CSS Component" />
                     </div>
-                </div></> : <></>}
+                </div></> : <><FaUserCircle style={{width:'80px'}}></FaUserCircle></>}
             </div>
         </div>
     );

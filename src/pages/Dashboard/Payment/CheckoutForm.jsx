@@ -4,22 +4,26 @@ import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import { AuthContext } from "../../../providers/AuthProvider";
 
 
-const CheckoutForm = ({price}) => {
+
+const CheckoutForm = ({ price, selectClass }) => {
+    console.log('selectClass', selectClass);
     const stripe = useStripe();
     const elements = useElements();
-    const {user} = useContext(AuthContext);
+    const { user } = useContext(AuthContext);
     const [axiosSecure] = useAxiosSecure()
     const [cardError, setCardError] = useState('');
-    const [clientSecret,setClientSecret] = useState('');
-    const [processing,setProcessing] = useState(false);
-    const [transactionId,setTransactionId] = useState('');
-    useEffect(()=>{
-       axiosSecure.post('/create-payment-intent',{price})
-       .then(res=>{
-        // console.log(res.data.clientSecret);
-        setClientSecret(res.data.clientSecret)
-       })
-    },[])
+    const [clientSecret, setClientSecret] = useState('');
+    const [processing, setProcessing] = useState(false);
+    const [transactionId, setTransactionId] = useState('');
+    useEffect(() => {
+        if (price > 0) {
+            axiosSecure.post('/create-payment-intent', { price })
+                .then(res => {
+                    // console.log(res.data.clientSecret);
+                    setClientSecret(res.data.clientSecret)
+                })
+        }
+    }, [price,axiosSecure])
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -41,32 +45,55 @@ const CheckoutForm = ({price}) => {
 
         else {
             setCardError("")
-            // console.log('payment method', paymentMethod);
+            console.log('payment method', paymentMethod);
         }
         setProcessing(true)
 
-        const {paymentIntent, error: confirmError} = await stripe.confirmCardPayment(
-             clientSecret,
+        const { paymentIntent, error: confirmError } = await stripe.confirmCardPayment(
+            clientSecret,
             {
-              payment_method: {
-                card: card,
-                billing_details: {
-                  email: user?.email || 'unknown',
-                  name :user?.displayName || 'anonymous'
+                payment_method: {
+                    card: card,
+                    billing_details: {
+                        email: user?.email || 'unknown',
+                        name: user?.displayName || 'anonymous'
+                    },
                 },
-              },
             },
-          );
-          if(confirmError){
+        );
+        if (confirmError) {
             console.log(confirmError);
-          }
+        }
 
-          console.log('payment intent',paymentIntent);
-          setProcessing(false)
-          if(paymentIntent.status === 'succeeded'){
+        console.log('payment intent', paymentIntent);
+        setProcessing(false)
+        if (paymentIntent.status === 'succeeded') {
             setTransactionId(paymentIntent.id);
-            
-          }
+            //save payment information to the server of class 
+            const payment = {
+                email: user?.email,
+                transactionId: paymentIntent.id,
+                price: parseFloat(price),
+                date: new Date(),
+                status: 'class pending',
+                picture: selectClass.map(course => course.picture),
+                classesId: selectClass.map(course => course?._id),
+                selectClassId: selectClass.map(course => course.selectClassId),
+                classType: selectClass.map(course => course?.classType),
+                name: selectClass.map(course => course?.name),
+                availableSeats: selectClass.map(course => course?.availableSeats - 1),
+                numberOfStudents: selectClass.map(course => course?.numberOfStudents + 1)
+
+
+            }
+            axiosSecure.post('/payments', payment)
+                .then(res => {
+                    console.log(res.data);
+                    if (res.data.insertedId) {
+                        // alert('yess')
+                    }
+                })
+        }
     }
     return (
         <>
@@ -91,10 +118,10 @@ const CheckoutForm = ({price}) => {
                     Pay
                 </button>
             </form>
-          {cardError && <p className="text-red-600 ml-8">{cardError}</p>}
-          {transactionId && <p className="text-green-500">Transaction complete with transactionId:{transactionId}</p>}
+            {cardError && <p className="text-red-600 ml-8">{cardError}</p>}
+            {transactionId && <p className="text-green-500">Transaction complete with transactionId:{transactionId}</p>}
         </>
-        
+
     );
 };
 

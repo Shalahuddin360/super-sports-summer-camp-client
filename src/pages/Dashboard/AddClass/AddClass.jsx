@@ -30,10 +30,10 @@ const AddClass = () => {
     //         console.log(newClass)
     //     }
     //    })
-       
+       //TODO:1
         console.log(data)
         const {classType,picture,name,email,availableSeats,price} = data;
-        const newClass = {classType,picture,name,email,price:parseFloat(price),availableSeats:parseFloat(availableSeats)}
+        const newClass = {classType,picture,name,email,price:parseFloat(price),availableSeats:parseFloat(availableSeats),status:"pending",instructorPicture:user?.photoURL}
         console.log(newClass);
         axiosSecure.post('/classes',newClass)
         .then(res=>{
@@ -81,7 +81,9 @@ const AddClass = () => {
                         <span className="label-text">Class Image</span>
 
                     </label>
+                    
                     {/* <input type="file" {...register("picture", { required: true })}  className="file-input file-input-bordered w-full " /> */}
+
                     <input type="text" {...register("picture", { required: true })} placeholder="Enter Your Photo URl:" className="input input-bordered" name="picture" />
                     {errors.picture && <span className="text-red-600">Class image is required</span>}
                 </div>

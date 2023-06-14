@@ -1,5 +1,5 @@
 import { NavLink, Outlet } from "react-router-dom";
-import { FaBookReader, FaHome,  FaUsers, FaWallet } from 'react-icons/fa';
+import { FaBookReader, FaHome, FaUsers, FaWallet } from 'react-icons/fa';
 import useSelect from "../hooks/useSelect";
 import useAdmin from "../hooks/useAdmin";
 import useInstructor from "../hooks/useInstructor";
@@ -31,11 +31,9 @@ const Dashboard = () => {
                             <>
                                 <p>Admin dashboard</p>
                                 <li><NavLink to="/dashboard/home" > <FaHome></FaHome> Admin Home</NavLink></li>
-                                {/* <li><NavLink to="/dashboard/mySelectedClass"><FaUserAlt></FaUserAlt>  Manage All Users
-                                    <span className="badge badge-secondary inline">+{selectClass?.length || 0}</span> </NavLink>
-                                </li> */}
+                    
                                 <li><NavLink to="/dashboard/allUsers"><FaUsers></FaUsers>  Manage All Users
-                                   </NavLink>
+                                </NavLink>
                                 </li>
 
 
@@ -49,8 +47,8 @@ const Dashboard = () => {
                                     <li>Instructor dashboard</li>
                                     <li><NavLink to="/dashboard/home" > <FaHome></FaHome>  Instructor Home</NavLink></li>
                                     <li><NavLink to="/dashboard/addClass"> <FaBookReader></FaBookReader> Add A Class
-                                     
-                                     </NavLink>
+
+                                    </NavLink>
                                     </li>
                                     <li><NavLink to="/dashboard/history"> <FaWallet></FaWallet> My Classes</NavLink> </li>
                                     <li><NavLink to="/dashboard/history"> <FaWallet></FaWallet>Feedback</NavLink> </li>
@@ -64,8 +62,8 @@ const Dashboard = () => {
                                     <li><NavLink to="/dashboard/mySelectedClass"> <FaBookReader></FaBookReader> My Selected Class
                                         <span className="badge badge-secondary inline">+{selectClass?.length || 0}</span> </NavLink>
                                     </li>
-                                    <li><NavLink to="/dashboard/history"> <FaWallet></FaWallet> Payment History</NavLink> </li>
-                                    
+                                    <li><NavLink to="/dashboard/paymentHistory"> <FaWallet></FaWallet> Payment History</NavLink> </li>
+
                                     {/* <li><NavLink to="/dashboard/myEnrollClass"> <FaWallet></FaWallet> My Enroll Classes</NavLink> </li> */}
 
                                 </>)
