@@ -1,7 +1,7 @@
 
 import { Helmet } from 'react-helmet-async';
 import ClassCover from '../Shared/ClassCover/ClassCover';
-import classImg from '../../assets/classes/classes.jpg'
+import classImg from '../../assets/banner/class.jpg'
 import useClass from '../../hooks/useClass';
 import SectionTitle from '../../components/SectionTitle/SectionTitle';
 import ClassCategory from './ClassCategory';

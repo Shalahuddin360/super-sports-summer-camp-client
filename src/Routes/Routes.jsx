@@ -18,7 +18,8 @@ import ErrorPage from "../pages/Home/ErrorPage/ErrorPage";
 import Payment from "../pages/Dashboard/Payment/Payment";
 import AdminRoute from "./AdminRoute";
 import PaymentHistory from "../pages/Dashboard/Payment/PaymentHistory";
-import InstructorSection from "../pages/Shared/InstructorSection.jsx/InstructorSection";
+import InstructorSection from "../pages/Shared/InstructorSection/InstructorSection";
+
 
 
 

@@ -1,6 +1,4 @@
 
-
-
 const SingleClass = ({ course }) => {
     // console.log(course);
     const {picture,classType,availableSeats,price} = course

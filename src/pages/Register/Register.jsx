@@ -6,7 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import Swal from "sweetalert2";
 import SocialLogin from "../Shared/SocialLogin/SocialLogin";
-
+import registerImg from "../../assets/banner/login.png"
 
 const Register = () => {
     const { register, handleSubmit, formState: { errors },watch,reset} = useForm();
@@ -65,11 +65,12 @@ const Register = () => {
             <div className="hero min-h-screen bg-base-200 ">
                 <div className="hero-content flex-col lg:flex-row">
                     <div className="text-center md:w-1/2 lg:text-left">
-                        <h1 className="text-5xl font-bold">Login now!</h1>
-                        <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+                        
+                         <img src={registerImg} alt="" />
                     </div>
                     <div className="card  md:w-1/2 max-w-sm shadow-2xl bg-base-100 mt-24">
                         <form onSubmit={handleSubmit(onSubmit)} className="card-body">
+                        <p className="lg:text-2xl font-bold">Register now!</p>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Name</span>

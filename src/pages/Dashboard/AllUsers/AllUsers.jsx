@@ -9,7 +9,7 @@ const AllUsers = () => {
         const res = await fetch('http://localhost:5000/users');
         return res.json();
     })
-    
+
     const handleMakeAdmin = user => {
       
         fetch(`http://localhost:5000/users/admin/${user._id}`, {

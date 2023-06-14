@@ -30,7 +30,7 @@ const AddClass = () => {
     //         console.log(newClass)
     //     }
     //    })
-       //TODO:1
+       //TODO:1 enroll of students
         console.log(data)
         const {classType,picture,name,email,availableSeats,price} = data;
         const newClass = {classType,picture,name,email,price:parseFloat(price),availableSeats:parseFloat(availableSeats),status:"pending",instructorPicture:user?.photoURL}

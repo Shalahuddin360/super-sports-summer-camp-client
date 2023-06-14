@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import enrollCover from '../../../assets/EnrollCourseCover/1.jpg'
+import enrollCover from '../../../assets/banner/classes.jpg'
 import ClassCover from '../../Shared/ClassCover/ClassCover';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
