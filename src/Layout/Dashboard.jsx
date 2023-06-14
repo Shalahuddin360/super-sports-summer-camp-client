@@ -37,7 +37,7 @@ const Dashboard = () => {
                                 </li>
 
 
-                                <li><NavLink to="/dashboard/history"><FaBookReader></FaBookReader> Manage Class</NavLink> </li>
+                                <li><NavLink to="/dashboard/allClasses"><FaBookReader></FaBookReader> Manage Class</NavLink> </li>
                             </>
 
                         ) : (
@@ -50,8 +50,8 @@ const Dashboard = () => {
 
                                     </NavLink>
                                     </li>
-                                    <li><NavLink to="/dashboard/history"> <FaWallet></FaWallet> My Classes</NavLink> </li>
-                                    <li><NavLink to="/dashboard/history"> <FaWallet></FaWallet>Feedback</NavLink> </li>
+                                    <li><NavLink to="/dashboard/myClasses"> <FaWallet></FaWallet> My Classes</NavLink> </li>
+
 
 
                                 </>) : (

@@ -58,7 +58,7 @@ const AllUsers = () => {
             {
                 <h2 className="text-3xl font-semibold my-4"> Total Users : {users?.length}</h2>
             }
-            <div className="overflow-x-auto">
+            <div className="overflow-x-auto w-full h-[500px] overflow-y-scroll scroll-smooth">
                 <table className="table">
                     {/* head */}
                     <thead>
@@ -90,8 +90,10 @@ const AllUsers = () => {
                                 </td>
                                 <td>
 
-                                    <button onClick={() => handleMakeAdmin(user)} disabled ={user.role === 'admin'} className="btn btn-ghost btn-md bg-green-500 text-white">Make Admin</button></td>
-                                <td>  <button onClick={() => handleMakeInstructor(user)} disabled ={user.role === 'instructor'} className="btn btn-ghost btn-md bg-green-500 text-white">Make Instructor</button></td>
+                                    <button onClick={() => handleMakeAdmin(user)} disabled ={user.role === 'admin'} className="btn btn-ghost btn-md bg-green-500 text-white">Make Admin</button>
+                                    </td>
+                                <td>  <button onClick={() => handleMakeInstructor(user)} disabled ={user.role === 'instructor'} className="btn btn-ghost btn-md bg-green-500 text-white">Make Instructor</button>
+                                </td>
                             </tr>)
                         }
 

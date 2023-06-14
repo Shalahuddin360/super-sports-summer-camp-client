@@ -13,7 +13,7 @@ const InstructorSection = () => {
     })
 
     console.log('instructor', users)
-    //  const football = classes.filter(course=>course.classType === "Football");
+    
     const instructors = users.filter(user => user.role === "instructor");
     return (
         <>

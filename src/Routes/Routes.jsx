@@ -19,6 +19,8 @@ import Payment from "../pages/Dashboard/Payment/Payment";
 import AdminRoute from "./AdminRoute";
 import PaymentHistory from "../pages/Dashboard/Payment/PaymentHistory";
 import InstructorSection from "../pages/Shared/InstructorSection/InstructorSection";
+import MyClasses from "../pages/Dashboard/MyClasses/MyClasses";
+import AllManageClasses from "../pages/Dashboard/ManageClasses/AllManageClasses";
 
 
 
@@ -72,8 +74,15 @@ import InstructorSection from "../pages/Shared/InstructorSection/InstructorSecti
           {
             path:'addClass',
             element: <InstructorRoute><AddClass></AddClass></InstructorRoute>
-          }
-          ,
+          },
+          {
+           path:'myClasses',
+           element:<InstructorRoute><MyClasses></MyClasses></InstructorRoute>
+          },
+          {
+           path:'allClasses',
+           element:<AllManageClasses></AllManageClasses>
+          },
           {
             path:'/dashboard/payment/:price',
             element:<Payment></Payment>
