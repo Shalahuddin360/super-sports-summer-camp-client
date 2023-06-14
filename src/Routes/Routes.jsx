@@ -18,6 +18,7 @@ import ErrorPage from "../pages/Home/ErrorPage/ErrorPage";
 import Payment from "../pages/Dashboard/Payment/Payment";
 import AdminRoute from "./AdminRoute";
 import PaymentHistory from "../pages/Dashboard/Payment/PaymentHistory";
+import InstructorSection from "../pages/Shared/InstructorSection.jsx/InstructorSection";
 
 
 
@@ -33,6 +34,10 @@ import PaymentHistory from "../pages/Dashboard/Payment/PaymentHistory";
         {
           path:"class",
           element:<Class></Class>
+        },
+        {
+         path:'instructors',
+         element:<InstructorSection></InstructorSection>
         },
         {
           path:'enroll/:classType',
