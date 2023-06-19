@@ -12,7 +12,7 @@ const PaymentHistory = () => {
         <div className='w-full'>
 
             <SectionTitle subHeading={"looking now"} heading={"Payment History"}></SectionTitle>
-            <div className="overflow-x-auto">
+            <div className="overflow-x-auto w-full h-[500px] overflow-y-scroll scroll-smooth">
                 <table className="table table-zebra">
                     {/* head */}
                     <thead>

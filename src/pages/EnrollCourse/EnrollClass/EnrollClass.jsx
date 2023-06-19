@@ -17,14 +17,15 @@ const EnrollClass = () => {
     const initialIndex = classTypes.indexOf(classType)
     const [tabIndex, setTabIndex] = useState(initialIndex);
     const [classes] = useClass();
+    const approveClass = classes.filter(approveClass=>approveClass.status==="approve");
+    // console.log("ApproveClass",approveClass);
 
-
-    const football = classes.filter(course => course.classType === "Football");
-    const basketball = classes.filter(course => course.classType === "Basketball");
-    const cricket = classes.filter(course => course.classType === "Cricket");
-    const badminton = classes.filter(course => course.classType === "Badminton");
-    const hockey = classes.filter(course => course.classType === "Hockey");
-    const athletics = classes.filter(course => course.classType === "athletics");
+    const football = approveClass.filter(course => course.classType === "Football");
+    const basketball = approveClass.filter(course => course.classType === "Basketball");
+    const cricket = approveClass.filter(course => course.classType === "Cricket");
+    const badminton =approveClass.filter(course => course.classType === "Badminton");
+    const hockey = approveClass.filter(course => course.classType === "Hockey");
+    const athletics = approveClass.filter(course => course.classType === "athletics");
     return (
         <div className=''>
             <Helmet>

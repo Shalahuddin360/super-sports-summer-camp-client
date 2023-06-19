@@ -8,21 +8,22 @@ const AllManageClasses = () => {
         const res = await fetch('http://localhost:5000/classes');
         return res.json()
     })
-    console.log(allClasses.status);
+    
 
     const handleStatusApprove = (allClass) => {
-        fetch(`http://localhost:5000/classes/approve/${allClass?._id}`, {
+     console.log('All class', allClass)
+        fetch(`http://localhost:5000/classes/approve/${allClass._id}`, {
             method: 'PATCH'
         })
             .then(res => res.json())
             .then(data => {
-
+                console.log('all',data)
                 if (data.modifiedCount) {
                     refetch();
                     Swal.fire({
                         position: 'top-end',
                         icon: 'success',
-                        title: `${allClass?.classType} is an approve Now`,
+                        title: `${allClass?.classType} Class is an approve Now`,
                         showConfirmButton: false,
                         timer: 1500
                     })
@@ -30,6 +31,7 @@ const AllManageClasses = () => {
             })
     }
     const handleStatusDeny = (allClass) => {
+        console.log(allClass._id)
         fetch(`http://localhost:5000/classes/deny/${allClass?._id}`, {
             method: 'PATCH'
         })
@@ -41,7 +43,7 @@ const AllManageClasses = () => {
                     Swal.fire({
                         position: 'top-end',
                         icon: 'success',
-                        title: `${allClass?.classType} is an deny Now`,
+                        title: `${allClass.classType} Class is an deny Now`,
                         showConfirmButton: false,
                         timer: 1500
                     })
@@ -101,18 +103,20 @@ const AllManageClasses = () => {
                             <td className="text-start">
 
                                 {
-                                    allClass?.status === 'approve' ? ('approve') : (allClass?.status === "deny" ? <>deny</> : <>pending</>)
+                                    allClass.status === "approve" ? 'approve' : (allClass.status === "deny" ? 'pending' : "pending")
 
                                 }
 
+
                             </td>
 
                             <td>
-                                <button onClick={() => handleStatusApprove(allClass)} className="btn btn-primary btn-xs">Approved</button>
+                                <button disabled={allClass.status === 'approve'} onClick={() => handleStatusApprove(allClass)} className="btn btn-primary btn-xs">Approved</button>
                             </td>
                             <td>
-                                <button onClick={() => handleStatusDeny(allClass)} className="btn btn-primary btn-xs">Deny</button>
+                                <button disabled={allClass.status === 'deny'} onClick={() => handleStatusDeny(allClass)} className="btn btn-primary btn-xs">Deny</button>
                             </td>
+
                             <td>
                                 <button className="btn btn-secondary btn-xs">Feedback</button>
                             </td>

@@ -33,9 +33,11 @@ const AddClass = () => {
        //TODO:1 enroll of students
         console.log(data)
         const {classType,picture,name,email,availableSeats,price} = data;
-        const newClass = {classType,picture,name,email,price:parseFloat(price),availableSeats:parseFloat(availableSeats),status:"pending",instructorPicture:user?.photoURL}
+        const newClass = {classType,picture,name,email,price:parseFloat(price),availableSeats:parseFloat(availableSeats),status:"pending",instructorPicture:user?.photoURL,numberOfStudents:0}
         console.log(newClass);
+        
         axiosSecure.post('/classes',newClass)
+
         .then(res=>{
             console.log('after posting new class ',res.data);
             if(res.data.insertedId){

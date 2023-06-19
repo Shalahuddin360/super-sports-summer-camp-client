@@ -2,23 +2,23 @@ import { Link } from "react-router-dom";
 import logo from "../../../assets/logo.png"
 import { useContext } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
-import { FaUserCircle} from "react-icons/fa";
+import { FaUserCircle } from "react-icons/fa";
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
     const handleLogOut = () => {
         logOut()
     }
     const navOptions = <>
-        <li><Link to="/">Home</Link> </li>
+        <li> <Link activeClassName='is-active' to="/">Home</Link> </li>
         <li> <Link to="/class">Enroll Class</Link></li>
         <li> <Link to="/enroll/football">Classes</Link></li>
         <li> <Link to="/instructors">Instructors</Link></li>
-        <li> <Link to="/dashboard/">Dashboard</Link></li>
+
 
         {
             user ? <>
 
-             
+                <li> <Link to="/dashboard/">Dashboard</Link></li>
                 <button onClick={handleLogOut} className="btn btn-ghost">Logout</button>
             </> : <>
                 <li> <Link to="/login">Login</Link></li>
@@ -52,7 +52,7 @@ const Navbar = () => {
                     <div className="rounded w-12 h-12">
                         <img src={user.photoURL} title={user?.displayName} alt="Avatar Tailwind CSS Component" />
                     </div>
-                </div></> : <><FaUserCircle style={{width:'80px'}}></FaUserCircle></>}
+                </div></> : <><FaUserCircle style={{ width: '80px' }}></FaUserCircle></>}
             </div>
         </div>
     );

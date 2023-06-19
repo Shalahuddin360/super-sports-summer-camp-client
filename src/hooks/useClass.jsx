@@ -8,7 +8,7 @@ const useClass =()=>{
        fetch('http://localhost:5000/classes')
        .then(res=>res.json())
        .then(data=>{
-        //    const footballCourse = data.filter(course=>course.classType === "football");
+        
 
            setClasses(data)
            setLoading(false)

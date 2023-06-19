@@ -93,7 +93,13 @@ const CheckoutForm = ({ price, selectClass }) => {
                         // alert('yess')
                     }
                 })
+            
+           
         }
+
+    }
+    const handlePaymentClassId =()=>{
+        
     }
     return (
         <>
@@ -114,7 +120,7 @@ const CheckoutForm = ({ price, selectClass }) => {
                         },
                     }}
                 />
-                <button type="submit" className="btn btn-primary btn-outline btn-sm mt-4" disabled={!stripe || !clientSecret || processing}>
+                <button onClick={handlePaymentClassId} type="submit" className="btn btn-primary btn-outline btn-sm mt-4" disabled={!stripe || !clientSecret || processing}>
                     Pay
                 </button>
             </form>

@@ -11,8 +11,6 @@ const stripePromise = loadStripe(import.meta.env.VITE_Payment_Gateway_PK);
 const Payment = () => {
     const {price} = useParams();
     const [selectClass] = useSelect();
-    console.log(price);
-   
     return (
         <div className='w-full'>
             <SectionTitle subHeading={"please proceed"} heading={"payment"}></SectionTitle>

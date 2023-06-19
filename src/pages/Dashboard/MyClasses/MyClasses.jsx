@@ -10,8 +10,7 @@ const MyClasses = () => {
         const res = await fetch('http://localhost:5000/classes');
         return res.json()
     })
-    console.log('classes', classes);
-    //  const football = classes.filter(course=>course.classType === "Football");
+    // console.log('classes', classes);
     const instructorAddClass = classes.filter(addClass => addClass.email === user.email)
     return (
         <div className="w-full ml-5">
@@ -31,6 +30,7 @@ const MyClasses = () => {
                             <th>Picture</th>
                             <th>Class Name</th>
                             <th>Status</th>
+                             <th>Total Enrolled Students </th>
                             <th>Update Class</th>
                             <th>Feedback</th>
                         </tr>
@@ -54,6 +54,7 @@ const MyClasses = () => {
                                 </td>
                                 <td>{classAdd.classType} </td>
                                 <td>{classAdd.status} </td>
+                                <td>{classAdd?.numberOfStudents}</td>
                                 <td>
                                     <button className="btn btn-primary">update</button>
                                </td>

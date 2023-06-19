@@ -3,9 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../providers/AuthProvider';
-// https://super-sport-feec1.web.app/
-//http://localhost:5000/
-// http://localhost:5000
+// http://localhost:5000/
 
 const axiosSecure = axios.create({
   baseURL: 'http://localhost:5000', 
